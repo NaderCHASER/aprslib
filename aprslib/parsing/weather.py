@@ -6,10 +6,6 @@ __all__ = [
     'parse_weather_data',
     ]
 
-# constants
-wind_multiplier = 0.44704
-rain_multiplier = 0.254
-
 key_map = {
     'g': 'wind_gust',
     'c': 'wind_direction',
@@ -26,18 +22,18 @@ key_map = {
     '#': 'rain_raw',
 }
 val_map = {
-    'g': lambda x: int(x) * wind_multiplier,
+    'g': lambda x: int(x),
     'c': lambda x: int(x),
-    'S': lambda x: int(x) * wind_multiplier,
-    't': lambda x: (float(x) - 32) / 1.8,
-    'r': lambda x: int(x) * rain_multiplier,
-    'p': lambda x: int(x) * rain_multiplier,
-    'P': lambda x: int(x) * rain_multiplier,
+    'S': lambda x: int(x),
+    't': lambda x: float(x),
+    'r': lambda x: int(x),
+    'p': lambda x: int(x),
+    'P': lambda x: int(x),
     'h': lambda x: 100 if int(x) == 0 else int(x),
-    'b': lambda x: float(x) / 10,
-    'l': lambda x: int(x) + 1000,
+    'b': lambda x: float(x),
+    'l': lambda x: int(x),
     'L': lambda x: int(x),
-    's': lambda x: float(x) * 25.4,
+    's': lambda x: float(x),
     '#': lambda x: int(x),
 }
 
